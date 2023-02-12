@@ -6,6 +6,7 @@
     box-sizing: border-box;
     font-family: "Noto Sans", sans-serif;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 .center {
@@ -209,6 +210,7 @@
 @font-face {
     font-family: KharkivTone;
     src: url("./assets/Kharkiv-Tone.ttf");
+    font-display: swap;
 }
 
 .author {
