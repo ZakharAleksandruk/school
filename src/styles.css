@@ -222,20 +222,17 @@
     font-size: 2rem;
 }
 
-.tooltips > a {
+.links > a {
+    display: inline-block;
     margin: 2rem;
     text-decoration: none;
 }
 
-.tooltips > a:visited {
-    color: #0000ee;
+.links > a:hover {
+    transform: translateY(15%);
+    transition: 0.4s;
 }
 
-.tooltips > a::before {
-    content: "";
-    width: 50px;
-    height: 50px;
-    border: 0;
-    border-radius: 50%;
-    background-color: #d3d3d3;
+.links > a:visited {
+    color: #0000ee;
 }
