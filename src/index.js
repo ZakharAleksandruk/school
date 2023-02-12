@@ -2,8 +2,10 @@ const firstText = document.getElementById("first-text");
 const secondText = document.getElementById("second-text");
 const thirdText = document.getElementById("third-text");
 const btn = document.getElementById("btn");
+const authors = document.querySelectorAll(".author");
 
 const animTime = 3000;
+const letters = "АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ";
 
 const changeColor = (el) => {
     el.classList.add("animate");
@@ -29,3 +31,38 @@ const animate = () => {
 animate();
 
 setInterval(animate, [animTime * 3]);
+
+const randomize = (el) => {
+    let iterations = 0;
+
+    const interval = setInterval(() => {
+        el.target.innerText = el.target.innerText
+            .split("")
+            .map((letter, index) => {
+                if (index < iterations) {
+                    return el.target.dataset.word[index];
+                }
+
+                return letters[Math.floor(Math.random() * 32)];
+            })
+            .join("");
+
+        if (iterations >= el.target.dataset.word.length) {
+            clearInterval(interval);
+        }
+
+        iterations += 1 / 3;
+    }, [45]);
+};
+
+authors.forEach((el) => el.addEventListener("mouseover", (e) => randomize(e)));
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            randomize(entry);
+        }
+    });
+});
+
+authors.forEach((el) => observer.observe(el));

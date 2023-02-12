@@ -81,6 +81,7 @@
     font-weight: 400;
     border: 2px solid transparent;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .btn-blue-gradient {
