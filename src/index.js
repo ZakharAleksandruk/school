@@ -52,7 +52,7 @@ const randomize = (el) => {
         }
 
         iterations += 1 / 3;
-    }, [45]);
+    }, [60]);
 };
 
 authors.forEach((el) => el.addEventListener("mouseover", (e) => randomize(e)));
@@ -61,6 +61,7 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             randomize(entry);
+            observer.unobserve(entry.target);
         }
     });
 });

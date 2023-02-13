@@ -29,9 +29,15 @@
 
 .container {
     width: 100vw;
+    gap: 2rem;
+    flex-direction: column;
 }
 
-.container > p {
+.container > h1 {
+    font-size: 2.5rem;
+}
+
+.text-container > h2 {
     margin: 0.4rem;
     font-size: 4.5rem;
     font-weight: 800;
@@ -196,8 +202,9 @@
     font-size: 3rem;
 }
 
-.quote-section > p:first-child {
+.quote-section > h3 {
     position: absolute;
+    font-size: 3rem;
     top: 8rem;
     color: transparent;
 }
