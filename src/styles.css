@@ -1,5 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@800&display=swap");
 
+:root {
+    --blue-gradient: linear-gradient(
+        135deg,
+        rgb(82, 172, 255) 25%,
+        rgb(255, 227, 44) 100%
+    );
+    --purple-gradient: linear-gradient(
+        160deg,
+        rgba(131, 58, 180, 1) 0%,
+        rgba(253, 29, 29, 1) 50%,
+        rgba(252, 176, 69, 1) 100%
+    );
+    --pink-gradient: linear-gradient(
+        160deg,
+        rgb(0, 218, 222) 0%,
+        rgb(252, 0, 255) 100%
+    );
+    --white-gradient: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
+    --white-primary: hsl(100, 100%, 100%);
+    --black-primary: hsl(0, 0%, 0%);
+    --link-blue: hsl(240, 100%, 47%);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -20,9 +43,12 @@
     -webkit-background-clip: text;
 }
 
-.main {
+.display {
     width: 100vw;
     height: 100vh;
+}
+
+.main {
     flex-direction: column;
     gap: 2.5rem;
 }
@@ -45,23 +71,15 @@
 }
 
 .blue-gradient {
-    background-image: #52acff;
-    background-image: linear-gradient(135deg, #52acff 25%, #ffe32c 100%);
+    background-image: var(--blue-gradient);
 }
 
 .purple-gradient {
-    background-image: rgb(131, 58, 180);
-    background-image: linear-gradient(
-        160deg,
-        rgba(131, 58, 180, 1) 0%,
-        rgba(253, 29, 29, 1) 50%,
-        rgba(252, 176, 69, 1) 100%
-    );
+    background-image: var(--purple-gradient);
 }
 
 .pink-gradient {
-    background-image: #00dbde;
-    background-image: linear-gradient(160deg, #00dbde 0%, #fc00ff 100%);
+    background-image: var(--pink-gradient);
 }
 
 .animate {
@@ -74,7 +92,7 @@
     }
 
     100% {
-        color: #000;
+        color: var(--black-primary);
     }
 }
 
@@ -92,9 +110,8 @@
 }
 
 .btn-blue-gradient {
-    background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255))
-            padding-box,
-        linear-gradient(135deg, #52acff 25%, #ffe32c 100%) border-box;
+    background: var(--white-gradient) padding-box,
+        var(--blue-gradient) border-box;
 }
 
 .btn-blue-gradient::before {
@@ -105,29 +122,21 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: linear-gradient(135deg, #52acff 25%, #ffe32c 100%);
+    background: var(--blue-gradient);
     filter: blur(25px);
     transform: scale(0.5);
 }
 
 .btn-blue-gradient:hover {
     padding: 1.325rem;
-    color: #fff;
+    color: var(--white-primary);
     border: unset;
-    background-image: #52acff;
-    background-image: linear-gradient(135deg, #52acff 25%, #ffe32c 100%);
+    background-image: var(--blue-gradient);
 }
 
 .btn-purple-gradient {
-    background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255))
-            padding-box,
-        linear-gradient(
-                160deg,
-                rgba(131, 58, 180, 1) 0%,
-                rgba(253, 29, 29, 1) 50%,
-                rgba(252, 176, 69, 1) 100%
-            )
-            border-box;
+    background: var(--white-gradient) padding-box,
+        var(--purple-gradient) border-box;
 }
 
 .btn-purple-gradient::before {
@@ -138,33 +147,21 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: linear-gradient(
-        160deg,
-        rgba(131, 58, 180, 1) 0%,
-        rgba(253, 29, 29, 1) 50%,
-        rgba(252, 176, 69, 1) 100%
-    );
+    background: var(--purple-gradient);
     filter: blur(25px);
     transform: scale(0.5);
 }
 
 .btn-purple-gradient:hover {
     padding: 1.325rem;
-    color: #fff;
+    color: var(--white-primary);
     border: unset;
-    background-image: rgb(131, 58, 180);
-    background-image: linear-gradient(
-        160deg,
-        rgba(131, 58, 180, 1) 0%,
-        rgba(253, 29, 29, 1) 50%,
-        rgba(252, 176, 69, 1) 100%
-    );
+    background-image: var(--purple-gradient);
 }
 
 .btn-pink-gradient {
-    background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255))
-            padding-box,
-        linear-gradient(160deg, #00dbde 0%, #fc00ff 100%) border-box;
+    background: var(--white-gradient) padding-box,
+        var(--pink-gradient) border-box;
 }
 
 .btn-pink-gradient::before {
@@ -175,27 +172,24 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: linear-gradient(160deg, #00dbde 0%, #fc00ff 100%);
+    background: var(--pink-gradient);
     filter: blur(25px);
     transform: scale(0.5);
 }
 
 .btn-pink-gradient:hover {
     padding: 1.325rem;
-    color: #fff;
+    color: var(--white-primary);
     border: unset;
-    background-image: #00dbde;
-    background-image: linear-gradient(160deg, #00dbde 0%, #fc00ff 100%);
+    background-image: var(--pink-gradient);
 }
 
 .quote-section {
-    width: 100vw;
-    height: 100vh;
     position: relative;
     flex-direction: column;
     gap: 2rem;
-    background-color: #000;
-    color: #fff;
+    background-color: var(--black-primary);
+    color: var(--white-primary);
 }
 
 .quote-section > p {
@@ -210,8 +204,8 @@
 }
 
 .white-bg {
-    color: #000;
-    background-color: #fff;
+    color: var(--black-primary);
+    background-color: var(--white-primary);
 }
 
 @font-face {
@@ -225,8 +219,6 @@
 }
 
 .info-section {
-    width: 100vw;
-    height: 100vh;
     flex-direction: column;
     gap: 2rem;
     font-size: 2rem;
@@ -244,5 +236,5 @@
 }
 
 .links > a:visited {
-    color: #0000ee;
+    color: var(--link-blue);
 }
