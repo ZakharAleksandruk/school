@@ -67,7 +67,7 @@
     margin: 0.4rem;
     font-size: 4.5rem;
     font-weight: 800;
-    color: #000;
+    color: var(--black-primary);
 }
 
 .blue-gradient {
@@ -237,4 +237,11 @@
 
 .links > a:visited {
     color: var(--link-blue);
+}
+
+footer {
+    width: 100vw;
+    padding: 1rem;
+    color: var(--white-primary);
+    background-color: var(--black-primary);
 }
