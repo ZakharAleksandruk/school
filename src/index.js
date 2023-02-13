@@ -39,8 +39,14 @@ const randomize = (el) => {
         el.target.innerText = el.target.innerText
             .split("")
             .map((letter, index) => {
+                const currLetter = el.target.dataset.word[index];
+
                 if (index < iterations) {
-                    return el.target.dataset.word[index];
+                    return currLetter;
+                }
+
+                if (currLetter === " ") {
+                    return currLetter;
                 }
 
                 return letters[Math.floor(Math.random() * 32)];
