@@ -60,7 +60,13 @@
 }
 
 .container > h1 {
+    text-align: center;
     font-size: 2.5rem;
+    padding: 0 0.2rem;
+}
+
+.text-container {
+    flex-wrap: wrap;
 }
 
 .text-container > h2 {
@@ -68,6 +74,30 @@
     font-size: 4.5rem;
     font-weight: 800;
     color: var(--black-primary);
+}
+
+@media (max-width: 1000px) {
+    .main {
+        gap: 1.5rem;
+    }
+
+    .container > h1 {
+        font-size: 2rem;
+    }
+
+    .text-container > h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .container > h1 {
+        font-size: 1.2rem;
+    }
+
+    .text-container > h2 {
+        font-size: 1.5rem;
+    }
 }
 
 .blue-gradient {
@@ -203,6 +233,32 @@
     color: transparent;
 }
 
+.quote {
+    text-align: center;
+    font-size: 3rem;
+    padding: 0 0.2rem;
+}
+
+@media (max-width: 1000px) {
+    .quote {
+        font-size: 2.2rem !important;
+    }
+}
+
+@media (max-width: 650px) {
+    .quote {
+        font-size: 1.4rem !important;
+    }
+
+    .author {
+        font-size: 2rem !important;
+    }
+
+    .quote-section > h3 {
+        font-size: 2rem;
+    }
+}
+
 .white-bg {
     color: var(--black-primary);
     background-color: var(--white-primary);
@@ -218,10 +274,46 @@
     font-family: KharkivTone;
 }
 
-.info-section {
+.history-section {
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.history-section > h3 {
+    font-size: 3rem;
+}
+
+.text-section {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.text-section > p:last-child {
+    text-align: center;
+}
+
+@media (max-height: 1000px) {
+    .history-section {
+        height: 150vh;
+    }
+}
+
+.year {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.contact-section {
     flex-direction: column;
     gap: 2rem;
     font-size: 2rem;
+    color: var(--white-primary);
+    background-color: var(--black-primary);
+}
+
+.links {
+    width: 100vw;
 }
 
 .links > a {
