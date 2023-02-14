@@ -73,3 +73,5 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 authors.forEach((el) => observer.observe(el));
+
+particlesJS.load("particles-js", "./assets/particles.json");

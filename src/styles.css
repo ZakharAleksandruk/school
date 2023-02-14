@@ -274,34 +274,28 @@
     font-family: KharkivTone;
 }
 
-.history-section {
+#particles-js {
+    height: 100vh;
+    position: relative;
     flex-direction: column;
     gap: 2rem;
+    background-color: var(--white-primary);
+    overflow: hidden;
 }
 
-.history-section > h3 {
-    font-size: 3rem;
+#particles-js > h3 {
+    font-size: 2rem;
 }
 
-.text-section {
-    flex-direction: column;
-    gap: 1rem;
+#particles-js > p {
+    width: 60%;
 }
 
-.text-section > p:last-child {
-    text-align: center;
-}
-
-@media (max-height: 1000px) {
-    .history-section {
-        height: 150vh;
-    }
-}
-
-.year {
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: 800;
+#particles-js > canvas {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
 }
 
 .contact-section {
