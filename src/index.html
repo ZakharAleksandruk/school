@@ -38,7 +38,7 @@
     <body>
         <header>
             <img src="./assets/android-chrome-192x192.png" />
-            <div>
+            <div class="header-links">
                 <a href="#main">Головна</a>
                 <a href="#particles-js">Історія</a>
                 <a href="#contact">Контакти</a>
@@ -47,82 +47,92 @@
                 <div class="line"></div>
             </div>
         </header>
-        <section class="main center display" id="main">
-            <div class="container center">
-                <h1>Косівський ліцей №2 імені Михайла Павлика</h1>
-                <div class="text-container center">
-                    <h2 id="first-text" class="gradient blue-gradient">
-                        Навчайся.
-                    </h2>
-                    <h2 id="second-text" class="gradient purple-gradient">
-                        Розвивайся.
-                    </h2>
-                    <h2 id="third-text" class="gradient pink-gradient">
-                        Еволюціонуй.
-                    </h2>
+        <div class="navigation center none">
+            <a href="#main">Головна</a>
+            <a href="#particles-js">Історія</a>
+            <a href="#contact">Контакти</a>
+        </div>
+        <main class="">
+            <section class="main center display" id="main">
+                <div class="container center">
+                    <h1>Косівський ліцей №2 імені Михайла Павлика</h1>
+                    <div class="text-container center">
+                        <h2 id="first-text" class="gradient blue-gradient">
+                            Навчайся.
+                        </h2>
+                        <h2 id="second-text" class="gradient purple-gradient">
+                            Розвивайся.
+                        </h2>
+                        <h2 id="third-text" class="gradient pink-gradient">
+                            Еволюціонуй.
+                        </h2>
+                    </div>
                 </div>
-            </div>
-            <a href="#contact">
-                <button class="btn" id="btn">Почати навчатися</button>
-            </a>
-        </section>
-        <section class="quote-section center display">
-            <h3 class="gradient blue-gradient">Навчайся.</h3>
-            <p class="quote">Кожен, хто перестає вчитися, старіє.</p>
-            <p class="author" data-word="ГЕНРІ ФОРД">ГЕНРІ ФОРД</p>
-        </section>
-        <section class="quote-section white-bg center display">
-            <h3 class="gradient purple-gradient">Розвивайся.</h3>
-            <p class="quote">
-                Нескінченне прагнення бути кращим є обов'язком людини.
-            </p>
-            <p class="author" data-word="МАХАТМА ГАНДІ">МАХАТМА ГАНДІ</p>
-        </section>
-        <section class="quote-section center display">
-            <h3 class="gradient pink-gradient">Еволюціонуй.</h3>
-            <p class="quote">Хто хоче змінити світ, хай змінить себе!</p>
-            <p class="author" data-word="СОКРАТ">СОКРАТ</p>
-        </section>
-        <section class="center particle-js" id="particles-js">
-            <h3>Історія</h3>
-            <p>
-                В 1792 в Косові відкрили першу школу. А в 1821 народну школу. У
-                1860-х школа стала трьохкласною, а у 1880-х шестикласною. В 1905
-                в місті діяли вже дві школи. А в 1940 на їх базі створили дві
-                середні школи. Через німецьку окупацію десятирічні школи
-                закрили. Одна з шкіл була зруйнована. А в центрі міста
-                функціонувала семирічна школа. Її вирішили перетворити на
-                восьмирічну та реорганізувати в школу 2 м.Косів. першим
-                директором стала Власенко Олена. В 2019 році назву змінили на
-                Косівський ліцей 2 ім. Михайла Павлика. Сьогодні в школі 22
-                класи і більш ніж 500 учнів.
-            </p>
-        </section>
-        <section class="contact-section center white-bg display" id="contact">
-            <h3>Контакти</h3>
-            <div class="links center">
-                <a href="tel:+380347822331" aria-label="номер телефону">
-                    <i class="fa-solid fa-phone"></i>
+                <a href="#contact">
+                    <button class="btn" id="btn">Почати навчатися</button>
                 </a>
-                <a
-                    href="mailto:school2@gmail.com"
-                    aria-label="електронна пошта"
-                >
-                    <i class="fa-solid fa-at"></i>
-                </a>
-                <a
-                    href="https://m.facebook.com/groups/1430075370380516/"
-                    aria-label="сторінка в фейсбук"
-                >
-                    <i class="fa-brands fa-square-facebook"></i>
-                </a>
-                <a
-                    href="https://goo.gl/maps/TJ5kvyneDbeonGka6"
-                    aria-label="місцезнаходження ліцею"
-                >
-                    <i class="fa-sharp fa-solid fa-location-dot"></i>
-                </a>
-            </div>
-        </section>
+            </section>
+            <section class="quote-section center display">
+                <h3 class="gradient blue-gradient">Навчайся.</h3>
+                <p class="quote">Кожен, хто перестає вчитися, старіє.</p>
+                <p class="author" data-word="ГЕНРІ ФОРД">ГЕНРІ ФОРД</p>
+            </section>
+            <section class="quote-section white-bg center display">
+                <h3 class="gradient purple-gradient">Розвивайся.</h3>
+                <p class="quote">
+                    Нескінченне прагнення бути кращим є обов'язком людини.
+                </p>
+                <p class="author" data-word="МАХАТМА ГАНДІ">МАХАТМА ГАНДІ</p>
+            </section>
+            <section class="quote-section center display">
+                <h3 class="gradient pink-gradient">Еволюціонуй.</h3>
+                <p class="quote">Хто хоче змінити світ, хай змінить себе!</p>
+                <p class="author" data-word="СОКРАТ">СОКРАТ</p>
+            </section>
+            <section class="center particle-js" id="particles-js">
+                <h3>Історія</h3>
+                <p>
+                    В 1792 в Косові відкрили першу школу. А в 1821 народну
+                    школу. У 1860-х школа стала трьохкласною, а у 1880-х
+                    шестикласною. В 1905 в місті діяли вже дві школи. А в 1940
+                    на їх базі створили дві середні школи. Через німецьку
+                    окупацію десятирічні школи закрили. Одна з шкіл була
+                    зруйнована. А в центрі міста функціонувала семирічна школа.
+                    Її вирішили перетворити на восьмирічну та реорганізувати в
+                    школу 2 м.Косів. першим директором стала Власенко Олена. В
+                    2019 році назву змінили на Косівський ліцей 2 ім. Михайла
+                    Павлика. Сьогодні в школі 22 класи і більш ніж 500 учнів.
+                </p>
+            </section>
+            <section
+                class="contact-section center white-bg display"
+                id="contact"
+            >
+                <h3>Контакти</h3>
+                <div class="links center">
+                    <a href="tel:+380347822331" aria-label="номер телефону">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+                    <a
+                        href="mailto:school2@gmail.com"
+                        aria-label="електронна пошта"
+                    >
+                        <i class="fa-solid fa-at"></i>
+                    </a>
+                    <a
+                        href="https://m.facebook.com/groups/1430075370380516/"
+                        aria-label="сторінка в фейсбук"
+                    >
+                        <i class="fa-brands fa-square-facebook"></i>
+                    </a>
+                    <a
+                        href="https://goo.gl/maps/TJ5kvyneDbeonGka6"
+                        aria-label="місцезнаходження ліцею"
+                    >
+                        <i class="fa-sharp fa-solid fa-location-dot"></i>
+                    </a>
+                </div>
+            </section>
+        </main>
     </body>
 </html>

@@ -48,6 +48,14 @@
     height: 100vh;
 }
 
+.none {
+    display: none !important;
+}
+
+.block {
+    display: block;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -70,12 +78,12 @@ header > div {
     gap: 2rem;
 }
 
-header > div > a {
+.header-links > a {
     color: var(--grey-primary);
     text-decoration: none;
 }
 
-header > div > a:hover {
+.header-links > a:hover {
     transition: 0.3s;
     color: var(--black-primary);
 }
@@ -108,9 +116,34 @@ header > div > a:hover {
 }
 
 @media (max-width: 800px) {
+    .header-links {
+        display: none;
+    }
+
     .burger {
         display: flex;
     }
+}
+
+.navigation {
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.navigation > a {
+    font-size: 2rem;
+    text-decoration: none;
+    color: var(--grey-primary);
+}
+
+.navigation > a:hover {
+    color: var(--black-primary);
+}
+
+.navigation > a:visited {
+    color: var(--grey-primary);
 }
 
 .main {

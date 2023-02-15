@@ -4,6 +4,8 @@ const thirdText = document.getElementById("third-text");
 const btn = document.getElementById("btn");
 const authors = document.querySelectorAll(".author");
 const burger = document.querySelector(".burger");
+const main = document.querySelector("main");
+const navigation = document.querySelector(".navigation");
 
 const animTime = 3000;
 const letters = "АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ";
@@ -82,11 +84,13 @@ let open = false;
 burger.addEventListener("click", () => {
     if (!open) {
         open = true;
-        burger.classList.add("open");
+        main.classList.add("none");
+        navigation.classList.remove("none");
 
         return;
     }
 
     open = false;
-    burger.classList.remove("open");
+    main.classList.remove("none");
+    navigation.classList.add("none");
 });
