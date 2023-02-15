@@ -6,6 +6,7 @@ const authors = document.querySelectorAll(".author");
 const burger = document.querySelector(".burger");
 const main = document.querySelector("main");
 const navigation = document.querySelector(".navigation");
+const burgerLinks = document.querySelectorAll(".burger-link");
 
 const animTime = 3000;
 const letters = "АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ";
@@ -81,7 +82,8 @@ particlesJS.load("particles-js", "./assets/particles.json");
 
 let open = false;
 
-burger.addEventListener("click", () => {
+const burgerHandler = () => {
+    console.log("lol");
     if (!open) {
         open = true;
         main.classList.add("none");
@@ -93,4 +95,7 @@ burger.addEventListener("click", () => {
     open = false;
     main.classList.remove("none");
     navigation.classList.add("none");
-});
+};
+
+burger.addEventListener("click", burgerHandler);
+burgerLinks.forEach((link) => link.addEventListener("click", burgerHandler));

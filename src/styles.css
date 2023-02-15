@@ -139,7 +139,7 @@ header > div {
 }
 
 .navigation > a:hover {
-    color: var(--black-primary);
+    color: var(--black-primary) !important;
 }
 
 .navigation > a:visited {
