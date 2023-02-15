@@ -3,6 +3,7 @@ const secondText = document.getElementById("second-text");
 const thirdText = document.getElementById("third-text");
 const btn = document.getElementById("btn");
 const authors = document.querySelectorAll(".author");
+const burger = document.querySelector(".burger");
 
 const animTime = 3000;
 const letters = "АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ";
@@ -75,3 +76,17 @@ const observer = new IntersectionObserver((entries) => {
 authors.forEach((el) => observer.observe(el));
 
 particlesJS.load("particles-js", "./assets/particles.json");
+
+let open = false;
+
+burger.addEventListener("click", () => {
+    if (!open) {
+        open = true;
+        burger.classList.add("open");
+
+        return;
+    }
+
+    open = false;
+    burger.classList.remove("open");
+});

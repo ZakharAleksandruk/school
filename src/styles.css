@@ -21,7 +21,6 @@
     --white-primary: hsl(100, 100%, 100%);
     --black-primary: hsl(0, 0%, 0%);
     --grey-primary: #808080;
-    --link-blue: hsl(240, 100%, 47%);
 }
 
 * {
@@ -79,6 +78,39 @@ header > div > a {
 header > div > a:hover {
     transition: 0.3s;
     color: var(--black-primary);
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 40px;
+    position: relative;
+    padding-top: 10px;
+}
+
+.line {
+    width: 20px;
+    height: 1px;
+    display: inline;
+    background-color: var(--black-primary);
+}
+
+.line::before {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 1px;
+    transform: translateY(-10px);
+    background-color: var(--black-primary);
+}
+
+@media (max-width: 800px) {
+    .burger {
+        display: flex;
+    }
 }
 
 .main {
@@ -331,6 +363,12 @@ header > div > a:hover {
     z-index: 0;
 }
 
+@media (max-width: 700px) {
+    #particles-js > p {
+        width: 80%;
+    }
+}
+
 .contact-section {
     flex-direction: column;
     gap: 2rem;
@@ -346,6 +384,7 @@ header > div > a:hover {
 .links > a {
     display: inline-block;
     margin: 2rem;
+    color: var(--white-primary);
     text-decoration: none;
 }
 
@@ -355,12 +394,5 @@ header > div > a:hover {
 }
 
 .links > a:visited {
-    color: var(--link-blue);
-}
-
-footer {
-    width: 100vw;
-    padding: 1rem;
     color: var(--white-primary);
-    background-color: var(--black-primary);
 }
