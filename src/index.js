@@ -98,5 +98,3 @@ const burgerHandler = () => {
 
 burger.addEventListener("click", burgerHandler);
 burgerLinks.forEach((link) => link.addEventListener("click", burgerHandler));
-
-particlesJS.load("particles-js", "./assets/particles.json");
