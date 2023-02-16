@@ -1,0 +1,75 @@
+---
+import "../styles/global.css";
+
+const { title, gradient, text, author, color, dataWord } = Astro.props;
+---
+
+<section
+    class={`quote-section center display ${color === "white" && "white-bg"}`}
+>
+    <h3 class={`gradient ${gradient}`}>{title}</h3>
+    <p class="quote">{text}</p>
+    <p class="author" data-word={dataWord}>{author}</p>
+</section>
+
+<style>
+    .quote-section {
+        position: relative;
+        flex-direction: column;
+        gap: 2rem;
+        background-color: var(--black-primary);
+        color: var(--white-primary);
+    }
+
+    .quote-section > p {
+        font-size: 3rem;
+    }
+
+    .quote-section > h3 {
+        position: absolute;
+        font-size: 3rem;
+        top: 10rem;
+        color: transparent;
+    }
+
+    .quote {
+        text-align: center;
+        font-size: 3rem;
+        padding: 0 0.2rem;
+    }
+
+    @media (max-width: 1000px) {
+        .quote {
+            font-size: 2.2rem !important;
+        }
+    }
+
+    @media (max-width: 650px) {
+        .quote {
+            font-size: 1.4rem !important;
+        }
+
+        .author {
+            font-size: 2rem !important;
+        }
+
+        .quote-section > h3 {
+            font-size: 2rem;
+        }
+    }
+
+    .white-bg {
+        color: var(--black-primary);
+        background-color: var(--white-primary);
+    }
+
+    @font-face {
+        font-family: KharkivTone;
+        src: url("/Kharkiv-Tone.ttf");
+        font-display: swap;
+    }
+
+    .author {
+        font-family: KharkivTone;
+    }
+</style>
