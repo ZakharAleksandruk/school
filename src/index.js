@@ -7,6 +7,7 @@ const burger = document.querySelector(".burger");
 const main = document.querySelector("main");
 const navigation = document.querySelector(".navigation");
 const burgerLinks = document.querySelectorAll(".burger-link");
+const particle = document.getElementById("particle");
 
 const animTime = 3000;
 const letters = "АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ";
@@ -78,8 +79,6 @@ const observer = new IntersectionObserver((entries) => {
 
 authors.forEach((el) => observer.observe(el));
 
-particlesJS.load("particles-js", "./assets/particles.json");
-
 let open = false;
 
 const burgerHandler = () => {
@@ -99,3 +98,7 @@ const burgerHandler = () => {
 
 burger.addEventListener("click", burgerHandler);
 burgerLinks.forEach((link) => link.addEventListener("click", burgerHandler));
+
+particle.addEventListener("load", () => {
+    particlesJS.load("particles-js", "./assets/particles.json");
+});
