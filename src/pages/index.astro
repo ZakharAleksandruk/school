@@ -3,6 +3,7 @@ import "../styles/global.css";
 import Main from "../components/main.astro";
 import Quote from "../components/quote.astro";
 import HomeLayout from "../layouts/HomeLayout.astro";
+import Logo from "/android-chrome-192x192.png";
 
 const quotes = [
     {
@@ -33,7 +34,7 @@ const quotes = [
 <HomeLayout>
     <body>
         <header>
-            <img src="/android-chrome-192x192.png" alt="logo" />
+            <img src={Logo} alt="logo" />
             <div class="header-links">
                 <a href="#main">Головна</a>
                 <a href="#contact">Контакти</a>
