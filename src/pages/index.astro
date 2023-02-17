@@ -1,6 +1,8 @@
 ---
 import "../styles/global.css";
+import Main from "../components/main.astro";
 import Quote from "../components/quote.astro";
+import HomeLayout from "../layouts/HomeLayout.astro";
 
 const quotes = [
     {
@@ -28,146 +30,7 @@ const quotes = [
 ];
 ---
 
-<script>
-    const firstText = document.getElementById("first-text");
-    const secondText = document.getElementById("second-text");
-    const thirdText = document.getElementById("third-text");
-    const btn = document.getElementById("btn");
-    const authors = document.querySelectorAll(".author");
-    const burger = document.querySelector(".burger");
-    const main = document.querySelector("main");
-    const navigation = document.querySelector(".navigation");
-    const burgerLinks = document.querySelectorAll(".burger-link");
-
-    const animTime = 3000;
-    const letters = "АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ";
-
-    const changeColor = (el) => {
-        el.classList.add("animate");
-        setTimeout(() => el.classList.remove("animate"), animTime);
-    };
-
-    const animate = () => {
-        changeColor(firstText);
-        btn.classList.remove("btn-pink-gradient");
-        btn.classList.add("btn-blue-gradient");
-
-        setTimeout(() => {
-            changeColor(secondText);
-            btn.classList.replace("btn-blue-gradient", "btn-purple-gradient");
-        }, animTime);
-
-        setTimeout(() => {
-            changeColor(thirdText);
-            btn.classList.replace("btn-purple-gradient", "btn-pink-gradient");
-        }, animTime * 2);
-    };
-
-    animate();
-
-    setInterval(animate, animTime * 3);
-
-    const randomize = (el) => {
-        let iterations = 0;
-
-        const interval = setInterval(() => {
-            el.target.innerText = el.target.innerText
-                .split("")
-                .map((letter, index) => {
-                    const currLetter = el.target.dataset.word[index];
-
-                    if (index < iterations) {
-                        return currLetter;
-                    }
-
-                    if (currLetter === " ") {
-                        return currLetter;
-                    }
-
-                    return letters[Math.floor(Math.random() * 32)];
-                })
-                .join("");
-
-            if (iterations >= el.target.dataset.word.length) {
-                clearInterval(interval);
-            }
-
-            iterations += 1 / 3;
-        }, 60);
-    };
-
-    authors.forEach((el) =>
-        el.addEventListener("mouseover", (e) => randomize(e))
-    );
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                randomize(entry);
-                observer.unobserve(entry.target);
-            }
-        });
-    });
-
-    authors.forEach((el) => observer.observe(el));
-
-    let open = false;
-
-    const burgerHandler = () => {
-        console.log("lol");
-        if (!open) {
-            open = true;
-            main.classList.add("none");
-            navigation.classList.remove("none");
-
-            return;
-        }
-
-        open = false;
-        main.classList.remove("none");
-        navigation.classList.add("none");
-    };
-
-    burger.addEventListener("click", burgerHandler);
-    burgerLinks.forEach((link) =>
-        link.addEventListener("click", burgerHandler)
-    );
-</script>
-
-<html lang="uk">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script
-            src="https://kit.fontawesome.com/f6c8f7da80.js"
-            crossorigin="anonymous"
-            async
-        ></script>
-        <meta
-            name="description"
-            content="Косівський ліцей №2 імені Михайла Павлика Косівської міської ради Косівського району Івано-Франківської облaсті"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="/apple-touch-icon.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/favicon-32x32.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/site.webmanifest" />
-        <title>Косівський ліцей №2 імені Михайла Павлика</title>
-    </head>
+<HomeLayout>
     <body>
         <header>
             <img src="/android-chrome-192x192.png" alt="logo" />
@@ -184,25 +47,7 @@ const quotes = [
             <a href="#contact" class="burger-link">Контакти</a>
         </div>
         <main class="">
-            <section class="main center display" id="main">
-                <div class="container center">
-                    <h1>Косівський ліцей №2 імені Михайла Павлика</h1>
-                    <div class="text-container center">
-                        <h2 id="first-text" class="gradient blue-gradient">
-                            Навчайся.
-                        </h2>
-                        <h2 id="second-text" class="gradient purple-gradient">
-                            Розвивайся.
-                        </h2>
-                        <h2 id="third-text" class="gradient pink-gradient">
-                            Еволюціонуй.
-                        </h2>
-                    </div>
-                </div>
-                <a href="#contact">
-                    <button class="btn" id="btn">Почати навчатися</button>
-                </a>
-            </section>
+            <Main />
 
             {
                 quotes.map((quote) => {
@@ -255,7 +100,7 @@ const quotes = [
             </section>
         </main>
     </body>
-</html>
+</HomeLayout>
 
 <style>
     header {
@@ -348,178 +193,6 @@ const quotes = [
         color: var(--grey-primary);
     }
 
-    .main {
-        flex-direction: column;
-        gap: 2.5rem;
-    }
-
-    .container {
-        width: 100vw;
-        gap: 2rem;
-        flex-direction: column;
-    }
-
-    .container > h1 {
-        text-align: center;
-        font-size: 2.5rem;
-        padding: 0 0.2rem;
-    }
-
-    .text-container > h2 {
-        margin: 0.4rem;
-        font-size: 4.5rem;
-        font-weight: 800;
-        color: var(--black-primary);
-    }
-
-    @media (max-width: 1500px) {
-        .text-container > h2 {
-            font-size: 3.5rem;
-        }
-    }
-
-    @media (max-width: 1200px) {
-        .text-container > h2 {
-            font-size: 3rem;
-        }
-    }
-
-    @media (max-width: 1000px) {
-        .main {
-            gap: 1.5rem;
-        }
-
-        .container > h1 {
-            font-size: 2rem;
-        }
-
-        .text-container > h2 {
-            font-size: 2.5rem;
-        }
-    }
-
-    @media (max-width: 850px) {
-        .text-container {
-            flex-direction: column;
-        }
-
-        .text-container > h2 {
-            font-size: 3rem;
-        }
-    }
-
-    @media (max-width: 600px) {
-        .container > h1 {
-            font-size: 1.5rem;
-        }
-
-        .text-container > h2 {
-            font-size: 2.5em;
-        }
-    }
-
-    .animate {
-        animation: color-change 5s;
-    }
-
-    @keyframes color-change {
-        25% {
-            color: transparent;
-        }
-
-        100% {
-            color: var(--black-primary);
-        }
-    }
-
-    .main > a {
-        position: relative;
-        padding: 1.5rem;
-    }
-
-    .btn {
-        padding: 1.2rem;
-        font-weight: 400;
-        border: 2px solid transparent;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    .btn-blue-gradient {
-        background: var(--white-gradient) padding-box,
-            var(--blue-gradient) border-box;
-    }
-
-    .btn-blue-gradient::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        background: var(--blue-gradient);
-        filter: blur(25px);
-        transform: scale(0.5);
-    }
-
-    .btn-blue-gradient:hover {
-        padding: 1.325rem;
-        color: var(--white-primary);
-        border: unset;
-        background-image: var(--blue-gradient);
-    }
-
-    .btn-purple-gradient {
-        background: var(--white-gradient) padding-box,
-            var(--purple-gradient) border-box;
-    }
-
-    .btn-purple-gradient::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        background: var(--purple-gradient);
-        filter: blur(25px);
-        transform: scale(0.5);
-    }
-
-    .btn-purple-gradient:hover {
-        padding: 1.325rem;
-        color: var(--white-primary);
-        border: unset;
-        background-image: var(--purple-gradient);
-    }
-
-    .btn-pink-gradient {
-        background: var(--white-gradient) padding-box,
-            var(--pink-gradient) border-box;
-    }
-
-    .btn-pink-gradient::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        background: var(--pink-gradient);
-        filter: blur(25px);
-        transform: scale(0.5);
-    }
-
-    .btn-pink-gradient:hover {
-        padding: 1.325rem;
-        color: var(--white-primary);
-        border: unset;
-        background-image: var(--pink-gradient);
-    }
-
     .contact-section {
         flex-direction: column;
         gap: 2rem;
@@ -548,3 +221,32 @@ const quotes = [
         color: var(--black-primary);
     }
 </style>
+
+<script>
+    const burger = document.querySelector(".burger");
+    const main = document.querySelector("main");
+    const navigation = document.querySelector(".navigation");
+    const burgerLinks = document.querySelectorAll(".burger-link");
+
+    let open = false;
+
+    const burgerHandler = () => {
+        console.log("lol");
+        if (!open) {
+            open = true;
+            main.classList.add("none");
+            navigation.classList.remove("none");
+
+            return;
+        }
+
+        open = false;
+        main.classList.remove("none");
+        navigation.classList.add("none");
+    };
+
+    burger.addEventListener("click", burgerHandler);
+    burgerLinks.forEach((link) =>
+        link.addEventListener("click", burgerHandler)
+    );
+</script>
