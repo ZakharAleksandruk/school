@@ -1,17 +1,19 @@
 ---
 import Layout from "./Layout.astro";
 import "../styles/global.css";
+import Navigation from "../components/navigation.astro";
 
 const { frontmatter } = Astro.props;
 ---
 
 <Layout>
-    <div class="container">
+    <Navigation />
+    <main class="container">
         <h1>
             {frontmatter.title}
         </h1>
         <p><slot /></p>
-    </div>
+    </main>
 </Layout>
 
 <style>
