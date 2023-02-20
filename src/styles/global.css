@@ -66,3 +66,9 @@
 .pink-gradient {
     background-image: var(--pink-gradient);
 }
+
+@font-face {
+    font-family: KharkivTone;
+    src: url("/Kharkiv-Tone.ttf");
+    font-display: swap;
+}

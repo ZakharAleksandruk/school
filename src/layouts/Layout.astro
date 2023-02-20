@@ -1,0 +1,28 @@
+---
+import AppleTouch from "/apple-touch-icon.png";
+import Favicon32 from "/favicon-32x32.png";
+import Favicon16 from "/favicon-16x16.png";
+import Manifest from "/site.webmanifest";
+import Header from "../components/header.astro";
+---
+
+<html lang="uk">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Косівський ліцей №2 імені Михайла Павлика Косівської міської ради Косівського району Івано-Франківської облaсті"
+        />
+        <link rel="apple-touch-icon" sizes="180x180" href={AppleTouch} />
+        <link rel="icon" type="image/png" sizes="32x32" href={Favicon32} />
+        <link rel="icon" type="image/png" sizes="16x16" href={Favicon16} />
+        <link rel="manifest" href={Manifest} />
+        <title>Косівський ліцей №2 імені Михайла Павлика</title>
+    </head>
+    <body>
+        <Header />
+        <slot />
+    </body>
+</html>

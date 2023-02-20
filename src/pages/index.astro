@@ -2,8 +2,7 @@
 import "../styles/global.css";
 import Main from "../components/main.astro";
 import Quote from "../components/quote.astro";
-import HomeLayout from "../layouts/HomeLayout.astro";
-import Logo from "/android-chrome-192x192.png";
+import Layout from "../layouts/Layout.astro";
 
 const quotes = [
     {
@@ -31,148 +30,71 @@ const quotes = [
 ];
 ---
 
-<HomeLayout>
-    <body>
-        <header>
-            <img src={Logo} alt="logo" />
-            <div class="header-links">
-                <a href="#main">Головна</a>
-                <a href="#contact">Контакти</a>
+<Layout>
+    <head>
+        <script
+            src="https://kit.fontawesome.com/f6c8f7da80.js"
+            crossorigin="anonymous"
+            async
+        ></script>
+    </head>
+    <div class="navigation center none">
+        <a href="#main" class="burger-link">Головна</a>
+        <a href="#contact" class="burger-link">Контакти</a>
+    </div>
+    <main class="">
+        <Main />
+
+        {
+            quotes.map((quote) => {
+                const { title, gradient, text, author, color, dataWord } =
+                    quote;
+
+                return (
+                    <Quote
+                        title={title}
+                        gradient={gradient}
+                        text={text}
+                        author={author}
+                        color={color}
+                        dataWord={dataWord}
+                    />
+                );
+            })
+        };
+
+        <section class="contact-section center white-bg display" id="contact">
+            <h3>Контакти</h3>
+            <div class="links center">
+                <a href="tel:+380347822331" aria-label="номер телефону">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+                <a
+                    href="mailto:school2@gmail.com"
+                    aria-label="електронна пошта"
+                >
+                    <i class="fa-solid fa-at"></i>
+                </a>
+                <a
+                    href="https://m.facebook.com/groups/1430075370380516/"
+                    aria-label="сторінка в фейсбук"
+                    target="_blank"
+                >
+                    <i class="fa-brands fa-square-facebook"></i>
+                </a>
+                <a
+                    href="https://goo.gl/maps/TJ5kvyneDbeonGka6"
+                    aria-label="місцезнаходження ліцею"
+                    target="_blank"
+                >
+                    <i class="fa-sharp fa-solid fa-location-dot"></i>
+                </a>
             </div>
-            <div class="burger">
-                <div class="line"></div>
-            </div>
-        </header>
-        <div class="navigation center none">
-            <a href="#main" class="burger-link">Головна</a>
-            <a href="#contact" class="burger-link">Контакти</a>
-        </div>
-        <main class="">
-            <Main />
-
-            {
-                quotes.map((quote) => {
-                    const { title, gradient, text, author, color, dataWord } =
-                        quote;
-
-                    return (
-                        <Quote
-                            title={title}
-                            gradient={gradient}
-                            text={text}
-                            author={author}
-                            color={color}
-                            dataWord={dataWord}
-                        />
-                    );
-                })
-            };
-
-            <section
-                class="contact-section center white-bg display"
-                id="contact"
-            >
-                <h3>Контакти</h3>
-                <div class="links center">
-                    <a href="tel:+380347822331" aria-label="номер телефону">
-                        <i class="fa-solid fa-phone"></i>
-                    </a>
-                    <a
-                        href="mailto:school2@gmail.com"
-                        aria-label="електронна пошта"
-                    >
-                        <i class="fa-solid fa-at"></i>
-                    </a>
-                    <a
-                        href="https://m.facebook.com/groups/1430075370380516/"
-                        aria-label="сторінка в фейсбук"
-                        target="_blank"
-                    >
-                        <i class="fa-brands fa-square-facebook"></i>
-                    </a>
-                    <a
-                        href="https://goo.gl/maps/TJ5kvyneDbeonGka6"
-                        aria-label="місцезнаходження ліцею"
-                        target="_blank"
-                    >
-                        <i class="fa-sharp fa-solid fa-location-dot"></i>
-                    </a>
-                </div>
-            </section>
-        </main>
-    </body>
-</HomeLayout>
+        </section>
+    </main>
+</Layout>
 
 <style>
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100vw;
-        position: fixed;
-        padding: 0 2rem;
-        background: var(--white-primary);
-        z-index: 999;
-        border-bottom: 0.05px solid var(--black-primary);
-    }
-
-    header > img {
-        width: 100px;
-        height: 100px;
-    }
-
-    header > div {
-        display: flex;
-        gap: 2rem;
-    }
-
-    .header-links > a {
-        color: var(--black-primary);
-        text-decoration: underline 0.3rem transparent;
-        transition: text-decoration-color 0.3s;
-    }
-
-    .header-links > a:hover {
-        text-decoration-color: var(--black-primary);
-    }
-
-    .burger {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 80px;
-        height: 40px;
-        position: relative;
-        padding-top: 10px;
-    }
-
-    .line {
-        width: 20px;
-        height: 1px;
-        display: inline;
-        background-color: var(--black-primary);
-    }
-
-    .line::before {
-        position: absolute;
-        content: "";
-        width: 20px;
-        height: 1px;
-        transform: translateY(-10px);
-        background-color: var(--black-primary);
-    }
-
-    @media (max-width: 800px) {
-        .header-links {
-            display: none;
-        }
-
-        .burger {
-            display: flex;
-        }
-    }
-
     .navigation {
         width: 100vw;
         height: 100vh;

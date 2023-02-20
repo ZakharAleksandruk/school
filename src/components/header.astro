@@ -1,0 +1,88 @@
+---
+import "../styles/global.css";
+import Logo from "/android-chrome-192x192.png";
+---
+
+<header>
+    <img src={Logo} alt="logo" />
+    <div class="header-links">
+        <a href="/#main">Головна</a>
+        <a href="/#contact">Контакти</a>
+        <a href="/history">Історія</a>
+    </div>
+    <div class="burger">
+        <div class="line"></div>
+    </div>
+</header>
+
+<style>
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100vw;
+        position: fixed;
+        padding: 0 2rem;
+        background: var(--white-primary);
+        z-index: 999;
+        border-bottom: 0.05px solid var(--black-primary);
+        top: 0;
+    }
+
+    header > img {
+        width: 100px;
+        height: 100px;
+    }
+
+    header > div {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .header-links > a {
+        color: var(--black-primary);
+        text-decoration: underline 0.3rem transparent;
+        transition: text-decoration-color 0.3s;
+    }
+
+    .header-links > a:hover {
+        text-decoration-color: var(--black-primary);
+    }
+
+    .burger {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 40px;
+        position: relative;
+        padding-top: 10px;
+    }
+
+    .line {
+        width: 20px;
+        height: 1px;
+        display: inline;
+        background-color: var(--black-primary);
+    }
+
+    .line::before {
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 1px;
+        transform: translateY(-10px);
+        background-color: var(--black-primary);
+    }
+
+    @media (max-width: 800px) {
+        .header-links {
+            display: none;
+        }
+
+        .burger {
+            display: flex;
+        }
+    }
+</style>
