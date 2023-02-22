@@ -1,0 +1,98 @@
+---
+import GalleryImg from "/gallery-img.jpg";
+import GalleryImg2 from "/gallery-img-2.jpg";
+import GalleryImg3 from "/gallery-img-3.jpg";
+import GalleryImg4 from "/gallery-img-4.jpg";
+import GalleryImg5 from "/gallery-img-5.jpg";
+import GalleryImg6 from "/gallery-img-6.jpg";
+---
+
+<div id="container">
+    <div id="track" data-mouse-down-at="0" data-prev-percentage="0">
+        <img class="img" src={GalleryImg} alt="img" draggable="false" />
+        <img class="img" src={GalleryImg2} alt="img" draggable="false" />
+        <img class="img" src={GalleryImg3} alt="img" draggable="false" />
+        <img class="img" src={GalleryImg4} alt="img" draggable="false" />
+        <img class="img" src={GalleryImg5} alt="img" draggable="false" />
+        <img class="img" src={GalleryImg6} alt="img" draggable="false" />
+    </div>
+</div>
+
+<style>
+    #container {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+    }
+
+    #track {
+        display: flex;
+        gap: 2rem;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(0%, -50%);
+    }
+
+    img {
+        width: 400px;
+        height: 400px;
+        object-fit: cover;
+        object-position: 100% center;
+    }
+</style>
+
+<script>
+    const track = document.getElementById("track");
+
+    const handleDown = (e) => (track.dataset.mouseDownAt = e.clientX);
+
+    const handleUp = (e) => {
+        track.dataset.mouseDownAt = "0";
+        track.dataset.prevPercentage = track.dataset.percentage;
+    };
+
+    const handleMove = (e) => {
+        if (track.dataset.mouseDownAt === "0") return;
+
+        const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+            maxDelta = window.innerWidth / 2;
+
+        const percentage = (mouseDelta / maxDelta) * -100,
+            nextPercentageUnconstrained =
+                parseFloat(track.dataset.prevPercentage) + percentage,
+            nextPercentage = Math.max(
+                Math.min(nextPercentageUnconstrained, 0),
+                -100
+            );
+
+        track.dataset.percentage = JSON.stringify(nextPercentage);
+
+        track.animate(
+            {
+                transform: `translate(${nextPercentage}%, -50%)`,
+            },
+            { duration: 1200, fill: "forwards" }
+        );
+
+        const images = document.querySelectorAll(".img");
+
+        for (const image of images) {
+            image.animate(
+                {
+                    objectPosition: `${nextPercentage + 100}% center`,
+                },
+                { duration: 1200, fill: "forwards" }
+            );
+        }
+    };
+
+    const container = document.getElementById("container");
+
+    container.onmousedown = (e) => handleDown(e);
+    container.ontouchstart = (e) => handleDown(e.touches[0]);
+    container.onmouseup = (e) => handleUp(e);
+    container.ontouchend = (e) => handleUp(e);
+    container.onmousemove = (e) => handleMove(e);
+    container.ontouchmove = (e) => handleMove(e.touches[0]);
+</script>

@@ -4,6 +4,8 @@ import Main from "../components/main.astro";
 import Quote from "../components/quote.astro";
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/navigation.astro";
+import Gallery from "../components/gallery.astro";
+import Contact from "../components/contact.astro";
 
 const quotes = [
     {
@@ -61,63 +63,7 @@ const quotes = [
             })
         };
 
-        <section class="contact-section center white-bg display" id="contact">
-            <h3>Контакти</h3>
-            <div class="links center">
-                <a href="tel:+380347822331" aria-label="номер телефону">
-                    <i class="fa-solid fa-phone"></i>
-                </a>
-                <a
-                    href="mailto:school2@gmail.com"
-                    aria-label="електронна пошта"
-                >
-                    <i class="fa-solid fa-at"></i>
-                </a>
-                <a
-                    href="https://m.facebook.com/groups/1430075370380516/"
-                    aria-label="сторінка в фейсбук"
-                    target="_blank"
-                >
-                    <i class="fa-brands fa-square-facebook"></i>
-                </a>
-                <a
-                    href="https://goo.gl/maps/TJ5kvyneDbeonGka6"
-                    aria-label="місцезнаходження ліцею"
-                    target="_blank"
-                >
-                    <i class="fa-sharp fa-solid fa-location-dot"></i>
-                </a>
-            </div>
-        </section>
+        <Gallery />
+        <Contact />
     </main>
 </Layout>
-
-<style>
-    .contact-section {
-        flex-direction: column;
-        gap: 2rem;
-        font-size: 2rem;
-        color: var(--black-primary);
-        background-color: var(--white-primary);
-    }
-
-    .links {
-        width: 100vw;
-    }
-
-    .links > a {
-        display: inline-block;
-        margin: 2rem;
-        color: var(--black-primary);
-        text-decoration: none;
-    }
-
-    .links > a:hover {
-        transform: translateY(15%);
-        transition: 0.4s;
-    }
-
-    .links > a:visited {
-        color: var(--black-primary);
-    }
-</style>
