@@ -7,7 +7,7 @@ import GalleryImg5 from "/gallery-img-5.jpg";
 import GalleryImg6 from "/gallery-img-6.jpg";
 ---
 
-<div id="container">
+<div id="gallery">
     <div id="track" data-mouse-down-at="0" data-prev-percentage="0">
         <img class="img" src={GalleryImg} alt="img" draggable="false" />
         <img class="img" src={GalleryImg2} alt="img" draggable="false" />
@@ -19,7 +19,7 @@ import GalleryImg6 from "/gallery-img-6.jpg";
 </div>
 
 <style>
-    #container {
+    #gallery {
         width: 100vw;
         height: 100vh;
         position: relative;
@@ -87,12 +87,12 @@ import GalleryImg6 from "/gallery-img-6.jpg";
         }
     };
 
-    const container = document.getElementById("container");
+    const gallery = document.getElementById("gallery");
 
-    container.onmousedown = (e) => handleDown(e);
-    container.ontouchstart = (e) => handleDown(e.touches[0]);
-    container.onmouseup = (e) => handleUp(e);
-    container.ontouchend = (e) => handleUp(e);
-    container.onmousemove = (e) => handleMove(e);
-    container.ontouchmove = (e) => handleMove(e.touches[0]);
+    gallery.onmousedown = (e) => handleDown(e);
+    gallery.ontouchstart = (e) => handleDown(e.touches[0]);
+    gallery.onmouseup = (e) => handleUp(e);
+    gallery.ontouchend = (e) => handleUp(e);
+    gallery.onmousemove = (e) => handleMove(e);
+    gallery.ontouchmove = (e) => handleMove(e.touches[0]);
 </script>
