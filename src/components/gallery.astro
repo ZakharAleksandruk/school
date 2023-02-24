@@ -9,10 +9,6 @@ import GalleryImg6 from "/gallery-img-6.jpg";
 
 <div id="gallery">
     <h3>Галерея</h3>
-    <p>
-        Фото: <span id="photographer"></span>
-        <span class="cursor"></span>
-    </p>
     <div id="track" data-mouse-down-at="0" data-prev-percentage="0">
         <img class="img" src={GalleryImg} alt="img" draggable="false" />
         <img class="img" src={GalleryImg2} alt="img" draggable="false" />
@@ -36,40 +32,6 @@ import GalleryImg6 from "/gallery-img-6.jpg";
         font-size: 2rem;
     }
 
-    #gallery > p {
-        text-align: center;
-        font-size: 1.5rem;
-        padding-top: 2rem;
-    }
-
-    #photographer {
-        text-transform: uppercase;
-        font-family: KharkivTone;
-    }
-
-    .cursor {
-        width: 2px;
-        height: 30px;
-        display: inline-block;
-        background-color: var(--black-primary);
-        animation: blink 0.6s linear infinite alternate;
-    }
-
-    @keyframes blink {
-        0% {
-            opacity: 100;
-        }
-        40% {
-            opacity: 100;
-        }
-        60% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 0;
-        }
-    }
-
     #track {
         display: flex;
         gap: 2rem;
@@ -80,42 +42,14 @@ import GalleryImg6 from "/gallery-img-6.jpg";
     }
 
     img {
-        width: 300px;
-        height: 400px;
+        width: 40vmin;
+        height: 50vmin;
         object-fit: cover;
         object-position: 100% center;
     }
 </style>
 
 <script>
-    const photographer = document.getElementById("photographer");
-
-    const type = () => {
-        photographer.textContent = "";
-
-        const text = "Максим Мацьоцький".split("");
-
-        for (let i = 0; i < text.length; i++) {
-            const time = 100 + i * 75;
-
-            setTimeout(() => {
-                photographer.textContent += text[i];
-            }, time);
-        }
-    };
-
-    const typingObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                type();
-            }
-        });
-    });
-
-    typingObserver.observe(photographer);
-
-    photographer.addEventListener("mouseover", type);
-
     const track = document.getElementById("track");
 
     const handleDown = (e) => (track.dataset.mouseDownAt = e.clientX);
