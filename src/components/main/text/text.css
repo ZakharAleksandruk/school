@@ -1,0 +1,38 @@
+.text-container > h2 {
+    margin: 0.4rem;
+    font-size: 4.5rem;
+    font-weight: 800;
+    color: var(--black-primary);
+}
+
+.animate {
+    animation: color-change 5s;
+}
+
+@keyframes color-change {
+    25% {
+        color: transparent;
+    }
+
+    100% {
+        color: var(--black-primary);
+    }
+}
+
+@media (max-width: 1500px) {
+    .text-container > h2 {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .text-container > h2 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    .text-container > h2 {
+        font-size: 2.5rem;
+    }
+}

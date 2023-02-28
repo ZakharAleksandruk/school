@@ -1,0 +1,87 @@
+.main > a {
+    position: relative;
+    padding: 1.5rem;
+}
+
+.btn {
+    padding: 1.2rem;
+    font-weight: 400;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-blue-gradient {
+    background: var(--white-gradient) padding-box,
+        var(--blue-gradient) border-box;
+}
+
+.btn-blue-gradient::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: var(--blue-gradient);
+    filter: blur(25px);
+    transform: scale(0.5);
+}
+
+.btn-blue-gradient:hover {
+    padding: 1.325rem;
+    color: var(--white-primary);
+    border: unset;
+    background-image: var(--blue-gradient);
+}
+
+.btn-purple-gradient {
+    background: var(--white-gradient) padding-box,
+        var(--purple-gradient) border-box;
+}
+
+.btn-purple-gradient::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: var(--purple-gradient);
+    filter: blur(25px);
+    transform: scale(0.5);
+}
+
+.btn-purple-gradient:hover {
+    padding: 1.325rem;
+    color: var(--white-primary);
+    border: unset;
+    background-image: var(--purple-gradient);
+}
+
+.btn-pink-gradient {
+    background: var(--white-gradient) padding-box,
+        var(--pink-gradient) border-box;
+}
+
+.btn-pink-gradient::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: var(--pink-gradient);
+    filter: blur(25px);
+    transform: scale(0.5);
+}
+
+.btn-pink-gradient:hover {
+    padding: 1.325rem;
+    color: var(--white-primary);
+    border: unset;
+    background-image: var(--pink-gradient);
+}
