@@ -1,3 +1,4 @@
+import Header from "./components/header/header.jsx";
 import Main from "./components/main/main.jsx";
 import Quote from "./components/quote/quote.jsx";
 
@@ -29,6 +30,7 @@ const App = () => {
 
     return (
         <div className="App">
+            <Header />
             <Main />
             {quotes.map((quote, index) => {
                 const { title, gradient, text, author, color, dataWord } =
@@ -46,7 +48,6 @@ const App = () => {
                     />
                 );
             })}
-            ;
         </div>
     );
 };
