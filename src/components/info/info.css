@@ -1,0 +1,24 @@
+.info-container {
+    padding: 10rem 4rem 4rem 4rem;
+    height: 100vh;
+    color: var(--white-primary);
+    background-color: var(--black-primary);
+}
+
+.info-container > h1 {
+    font-size: 4rem;
+    font-family: KharkivTone;
+    letter-spacing: 0.3rem;
+    text-align: center;
+}
+
+.info-container > p {
+    font-weight: 100;
+    margin: 2rem 0;
+}
+
+@media (max-width: 500px) {
+    .info-container > h1 {
+        font-size: 2.5rem;
+    }
+}

@@ -1,9 +1,9 @@
-import Header from "./components/header/header.jsx";
-import Main from "./components/main/main.jsx";
-import Quote from "./components/quote/quote.jsx";
-import Contact from "./components/contact/contact.jsx";
+import Header from "../components/header/header.jsx";
+import Main from "../components/main/main.jsx";
+import Quote from "../components/quote/quote.jsx";
+import Contact from "../components/contact/contact.jsx";
 
-const App = () => {
+const Home = () => {
     const quotes = [
         {
             title: "Навчайся.",
@@ -56,4 +56,4 @@ const App = () => {
     );
 };
 
-export default App;
+export default Home;
