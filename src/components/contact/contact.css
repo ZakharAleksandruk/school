@@ -1,0 +1,27 @@
+.contact-section {
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 2rem;
+    color: var(--black-primary);
+    background-color: var(--white-primary);
+}
+
+.links {
+    width: 100vw;
+}
+
+.links > a {
+    display: inline-block;
+    margin: 2rem;
+    color: var(--black-primary);
+    text-decoration: none;
+}
+
+.links > a:hover {
+    transform: translateY(15%);
+    transition: 0.4s;
+}
+
+.links > a:visited {
+    color: var(--black-primary);
+}

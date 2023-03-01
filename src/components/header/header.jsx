@@ -21,10 +21,27 @@ const Header = () => {
             </header>
             {isActive ? (
                 <div className="drawer">
-                    <a href="/school/#main">Головна</a>
-                    <a href="/school/#gallery">Галерея</a>
-                    <a href="/school/#contact">Контакти</a>
-                    <a href="/school/history">Історія</a>
+                    <a href="/school/#main" onClick={() => setIsActive(false)}>
+                        Головна
+                    </a>
+                    <a
+                        href="/school/#gallery"
+                        onClick={() => setIsActive(false)}
+                    >
+                        Галерея
+                    </a>
+                    <a
+                        href="/school/#contact"
+                        onClick={() => setIsActive(false)}
+                    >
+                        Контакти
+                    </a>
+                    <a
+                        href="/school/history"
+                        onClick={() => setIsActive(false)}
+                    >
+                        Історія
+                    </a>
                 </div>
             ) : null}
         </>
