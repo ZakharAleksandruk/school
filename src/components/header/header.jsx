@@ -1,5 +1,7 @@
 import "./header.css";
 import { useState } from "react";
+import { RxCross1 } from "react-icons/rx";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 const Header = () => {
     const [isActive, setIsActive] = useState(false);
@@ -14,13 +16,17 @@ const Header = () => {
                     <a href="/school/#contact">Контакти</a>
                     <a href="/school/history">Історія</a>
                 </div>
-                <div
+                <RxHamburgerMenu
                     className="burger"
                     onClick={() => setIsActive((prev) => !prev)}
-                ></div>
+                />
             </header>
             {isActive ? (
                 <div className="drawer">
+                    <RxCross1
+                        className="cross"
+                        onClick={() => setIsActive(false)}
+                    />
                     <a href="/school/#main" onClick={() => setIsActive(false)}>
                         Головна
                     </a>
