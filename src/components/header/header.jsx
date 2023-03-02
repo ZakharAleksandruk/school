@@ -9,7 +9,7 @@ const Header = () => {
     return (
         <>
             <header>
-                <img src="/android-chrome-192x192.png" />
+                <img src="/android-chrome-192x192.png" alt="logo" />
                 <div className="header-links">
                     <a href="/school/#main">Головна</a>
                     <a href="/school/#gallery">Галерея</a>

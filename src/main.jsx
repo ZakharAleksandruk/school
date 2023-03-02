@@ -3,7 +3,9 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home.jsx";
-import History from "./pages/History.jsx";
+import Info from "./components/info/info.jsx";
+import { data } from "./data/data.js";
+import History from "./pages/History";
 
 const router = createBrowserRouter([
     {
@@ -11,8 +13,16 @@ const router = createBrowserRouter([
         element: <Home />,
     },
     {
-        path: "/school/history",
-        element: <History />,
+        path: "/school/info/general-info",
+        element: (
+            <Info
+                title={data.generalInfo.title}
+                paragraphs={data.generalInfo.paragraphs}
+            />
+        ),
+    },
+    {
+        path: "/school/info/history",
     },
 ]);
 

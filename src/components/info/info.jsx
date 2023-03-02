@@ -1,11 +1,20 @@
 import "./info.css";
+import Header from "../header/header";
+import { uid } from "uid";
 
-const Info = ({ title, children }) => {
+const Info = ({ title, paragraphs }) => {
     return (
-        <div className="info-container">
-            <h1>{title}</h1>
-            {children}
-        </div>
+        <>
+            <Header />
+            <div className="info-container">
+                <h1>{title}</h1>
+                <div className="pContainer">
+                    {paragraphs.map((p) => {
+                        return <p key={uid(10)}>{p}</p>;
+                    })}
+                </div>
+            </div>
+        </>
     );
 };
 
