@@ -14,7 +14,7 @@ const Header = () => {
                     <a href="/school/#main">Головна</a>
                     <a href="/school/#gallery">Галерея</a>
                     <a href="/school/#contact">Контакти</a>
-                    <a href="/school/history">Історія</a>
+                    <a href="/school/info/history">Історія</a>
                 </div>
                 <RxHamburgerMenu
                     className="burger"

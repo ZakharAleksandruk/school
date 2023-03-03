@@ -15,7 +15,10 @@ const Drawer = ({ setIsActive }) => {
             <Link to={"/school/#contact"} onClick={() => setIsActive(false)}>
                 Контакти
             </Link>
-            <Link to={"/school/history"} onClick={() => setIsActive(false)}>
+            <Link
+                to={"/school/info/history"}
+                onClick={() => setIsActive(false)}
+            >
                 Історія
             </Link>
         </div>

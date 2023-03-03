@@ -13,28 +13,23 @@
     text-align: center;
 }
 
-.pContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    padding-top: 2rem;
+.p-container {
+    padding: 0 calc(50% - 10vw);
 }
 
-.pContainer > p {
-    text-align: left;
+.p-container > p {
+    padding: 1rem 0;
     font-weight: 100;
 }
 
-@media (max-width: 100px) {
+@media (max-width: 1000px) {
     .info-container > h1 {
-        font-size: 3rem;
+        font-size: 2rem;
     }
 }
 
 @media (max-width: 500px) {
     .info-container > h1 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 }

@@ -1,5 +1,6 @@
 import "./info.css";
 import Header from "../header/header";
+import { Container } from "@mui/material";
 import { uid } from "uid";
 
 const Info = ({ title, paragraphs }) => {
@@ -8,11 +9,11 @@ const Info = ({ title, paragraphs }) => {
             <Header />
             <div className="info-container">
                 <h1>{title}</h1>
-                <div className="pContainer">
+                <Container sx={{ paddingTop: "2rem" }} className="p-container">
                     {paragraphs.map((p) => {
-                        return <p key={uid(10)}>{p}</p>;
+                        return <p key={uid()}>{p}</p>;
                     })}
-                </div>
+                </Container>
             </div>
         </>
     );
