@@ -7,7 +7,7 @@
 }
 
 .info-container > h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     font-family: KharkivTone;
     letter-spacing: 0.3rem;
     text-align: center;
@@ -24,12 +24,12 @@
 
 @media (max-width: 1000px) {
     .info-container > h1 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 }
 
 @media (max-width: 500px) {
     .info-container > h1 {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 }

@@ -1,5 +1,5 @@
 import "./info.css";
-import Header from "../header/header";
+import Header from "../header/header.jsx";
 import { Container } from "@mui/material";
 import { uid } from "uid";
 
