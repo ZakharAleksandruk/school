@@ -6,7 +6,7 @@ import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
 import { uid } from "uid";
 
-export default function BasicMenu({ label, options }) {
+export default function BasicMenu({ label, options, setIsActive }) {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -47,7 +47,13 @@ export default function BasicMenu({ label, options }) {
             >
                 {options.map((el) => {
                     return (
-                        <MenuItem onClick={handleClose} key={uid()}>
+                        <MenuItem
+                            onClick={() => {
+                                handleClose();
+                                setIsActive(false);
+                            }}
+                            key={uid()}
+                        >
                             <Link className="dropdown-link" to={el.href}>
                                 {el.text}
                             </Link>

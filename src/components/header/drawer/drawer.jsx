@@ -19,16 +19,29 @@ const Drawer = ({ setIsActive }) => {
             <Link to={"/school/#contact"} onClick={() => setIsActive(false)}>
                 Контакти
             </Link>
-            <BasicMenu label={"Інформація про заклад"} options={infoOptions} />
+            <BasicMenu
+                label={"Інформація про заклад"}
+                options={infoOptions}
+                setIsActive={setIsActive}
+            />
             <Link
+                onClick={() => setIsActive(false)}
                 to={
                     "/school/info/internal-system-of-education-quality-insurance"
                 }
             >
                 Внутрішня система забезпечення якості освіти
             </Link>
-            <BasicMenu label={"Батькам"} options={parentsOptions} />
-            <BasicMenu label={"Учням"} options={studentOptions} />
+            <BasicMenu
+                label={"Батькам"}
+                options={parentsOptions}
+                setIsActive={setIsActive}
+            />
+            <BasicMenu
+                label={"Учням"}
+                options={studentOptions}
+                setIsActive={setIsActive}
+            />
         </div>
     );
 };
