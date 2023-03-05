@@ -16,7 +16,6 @@
 }
 
 .drawer > a {
-    font-size: 1.5rem;
     color: var(--black-primary);
     text-decoration: underline 0.3rem transparent;
     transition: text-decoration-color 0.3s;

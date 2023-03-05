@@ -23,7 +23,7 @@ header > div {
 
 .header-links > a {
     color: var(--black-primary);
-    text-decoration: underline 0.3rem transparent;
+    text-decoration: underline 0.2rem transparent;
     transition: text-decoration-color 0.3s;
 }
 
@@ -37,13 +37,13 @@ header > div {
     height: 20px;
 }
 
-@media (max-width: 800px) {
-    .header-links {
-        display: none;
-    }
-
+@media (max-width: 1300px) {
     .burger {
         display: flex;
+    }
+
+    .header-links {
+        display: none;
     }
 }
 

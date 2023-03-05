@@ -1,14 +1,15 @@
+import "./dropdown.css";
 import * as React from "react";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
+import { uid } from "uid";
 
-const Dropdown = ({ label, options }) => {
-    const [anchorEl, setAnchorEl] =
-        (React.useState < null) | (HTMLElement > null);
+export default function BasicMenu({ label, options }) {
+    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
-    const handleClick = (event) => {
+    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget);
     };
     const handleClose = () => {
@@ -23,6 +24,15 @@ const Dropdown = ({ label, options }) => {
                 aria-haspopup="true"
                 aria-expanded={open ? "true" : undefined}
                 onClick={handleClick}
+                sx={{
+                    height: "1rem",
+                    overflow: "hidden",
+                    textTransform: "none",
+                    fontSize: "1rem",
+                    position: "relative",
+                    marginBottom: "0.1rem",
+                    color: "#000",
+                }}
             >
                 {label}
             </Button>
@@ -37,14 +47,14 @@ const Dropdown = ({ label, options }) => {
             >
                 {options.map((el) => {
                     return (
-                        <MenuItem onClick={handleClose}>
-                            <Link to={el.href}>{el.text}</Link>
+                        <MenuItem onClick={handleClose} key={uid()}>
+                            <Link className="dropdown-link" to={el.href}>
+                                {el.text}
+                            </Link>
                         </MenuItem>
                     );
                 })}
             </Menu>
         </div>
     );
-};
-
-export default Dropdown;
+}
