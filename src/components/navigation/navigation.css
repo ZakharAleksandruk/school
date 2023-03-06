@@ -1,0 +1,22 @@
+.nav-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    color: var(--white-primary);
+    background-color: var(--black-primary);
+    gap: 4rem;
+    padding: 2rem 0;
+}
+
+.nav-title {
+    text-align: center;
+}
+
+.navigation {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem 2rem 2rem;
+}

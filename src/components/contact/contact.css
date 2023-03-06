@@ -2,8 +2,8 @@
     flex-direction: column;
     gap: 2rem;
     font-size: 2rem;
-    color: var(--black-primary);
-    background-color: var(--white-primary);
+    color: var(--white-primary);
+    background-color: var(--black-primary);
 }
 
 .links {
@@ -13,7 +13,7 @@
 .links > a {
     display: inline-block;
     margin: 2rem;
-    color: var(--black-primary);
+    color: var(--white-primary);
     text-decoration: none;
 }
 
@@ -23,5 +23,5 @@
 }
 
 .links > a:visited {
-    color: var(--black-primary);
+    color: var(--white-primary);
 }
