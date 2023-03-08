@@ -1,5 +1,4 @@
 .dropdown-link {
     color: var(--black-primary);
-    text-decoration: underline 0.2rem transparent;
-    transition: text-decoration-color 0.3s;
+    font-weight: 400;
 }

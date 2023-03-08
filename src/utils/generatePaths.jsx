@@ -1,6 +1,7 @@
 import { dataPaths } from "../data/data.js";
 import Info from "../components/info/info.jsx";
 import Home from "../pages/Home.jsx";
+import News from "../pages/News/News.jsx";
 import Administration from "../pages/Administration/Administration.jsx";
 import EducationQuality from "../pages/EducationQuality/EducationQuality.jsx";
 
@@ -19,6 +20,7 @@ export const generatePaths = () => {
             path: "/school/",
             element: <Home />,
         },
+        { path: "/school/news", element: <News /> },
         { path: "/school/info/administration", element: <Administration /> },
         {
             path: "/school/info/internal-system-of-education-quality-insurance",

@@ -1,3 +1,4 @@
+import "./card.css";
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
@@ -10,7 +11,10 @@ import { Link } from "react-router-dom";
 const OutlinedCard = ({ title, href }) => {
     return (
         <Box sx={{ minWidth: 275 }}>
-            <Card variant="outlined">
+            <Card
+                variant="outlined"
+                sx={{ minHeight: 200, position: "relative" }}
+            >
                 <>
                     <CardContent>
                         <Typography
@@ -21,8 +25,15 @@ const OutlinedCard = ({ title, href }) => {
                         </Typography>
                     </CardContent>
                     <CardActions>
-                        <Button>
-                            <Link to={href}>Перейти</Link>
+                        <Button
+                            sx={{
+                                position: "absolute",
+                                bottom: 10,
+                            }}
+                        >
+                            <Link to={href} className="card-link">
+                                Перейти
+                            </Link>
                         </Button>
                     </CardActions>
                 </>

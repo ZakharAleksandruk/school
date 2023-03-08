@@ -1,5 +1,5 @@
 import "./header.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Logo from "/android-chrome-192x192.png";
 import { Link } from "react-router-dom";
 import BasicMenu from "./dropdown/dropdown.tsx";
@@ -11,6 +11,7 @@ import Drawer from "./drawer/drawer.jsx";
 
 const Header = () => {
     const [isActive, setIsActive] = useState(false);
+    const contactRef = useRef(null);
 
     return (
         <>
@@ -19,7 +20,13 @@ const Header = () => {
                 <div className="header-links">
                     <Link to={"/school/#main"}>Головна</Link>
                     <Link to={"/school/#gallery"}>Галерея</Link>
-                    <Link to={"/school/#contact"}>Контакти</Link>
+                    <Link
+                        to={"/school/#contact"}
+                        ref={contactRef}
+                        onClick={() => contactRef.current.scrollIntoView()}
+                    >
+                        Контакти
+                    </Link>
                     <BasicMenu
                         label={"Інформація про заклад"}
                         options={infoOptions}
