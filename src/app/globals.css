@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;400;800&display=swap");
+
+:root {
+    --blue-gradient: linear-gradient(
+        135deg,
+        rgb(82, 172, 255) 25%,
+        rgb(255, 227, 44) 100%
+    );
+    --purple-gradient: linear-gradient(
+        160deg,
+        rgba(131, 58, 180, 1) 0%,
+        rgba(253, 29, 29, 1) 50%,
+        rgba(252, 176, 69, 1) 100%
+    );
+    --pink-gradient: linear-gradient(
+        160deg,
+        rgb(0, 218, 222) 0%,
+        rgb(252, 0, 255) 100%
+    );
+    --white-gradient: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
+    --white-primary: hsl(100, 100%, 100%);
+    --black-primary: hsl(0, 0%, 0%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans", sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 0 !important;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.display {
+    width: 100vw;
+    height: 100vh;
+}
+
+.none {
+    display: none !important;
+}
+
+.block {
+    display: block;
+}
+
+.blue-gradient {
+    background-image: var(--blue-gradient);
+}
+
+.purple-gradient {
+    background-image: var(--purple-gradient);
+}
+
+.pink-gradient {
+    background-image: var(--pink-gradient);
+}
+
+@font-face {
+    font-family: KharkivTone;
+    src: url("/Kharkiv-Tone.ttf");
+    font-display: swap;
+}
+
