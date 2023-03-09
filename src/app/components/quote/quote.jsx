@@ -36,16 +36,16 @@ const Quote = ({ color, gradient, title, text, dataWord, author }) => {
         }, 60);
     };
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                randomize(entry);
-                observer.unobserve(entry.target);
-            }
-        });
-    });
-
     useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    randomize(entry);
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
         authorRef.current?.addEventListener("mouseover", randomize);
         observer?.observe(authorRef.current);
     }, []);

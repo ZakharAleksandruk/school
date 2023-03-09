@@ -2,6 +2,7 @@
 
 import "./header.css";
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import BasicMenu from "./dropdown/dropdown.tsx";
 import { infoOptions } from "./data/data.js";
@@ -16,7 +17,12 @@ const Header = () => {
     return (
         <>
             <header>
-                <img alt="logo" />
+                <Image
+                    src="/android-chrome-192x192.png"
+                    width={100}
+                    height={100}
+                    alt="logo"
+                />
                 <div className="header-links">
                     <Link href={"/school/#main"}>Головна</Link>
                     <Link href={"/school/#gallery"}>Галерея</Link>
