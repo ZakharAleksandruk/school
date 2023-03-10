@@ -5,6 +5,7 @@ const Text = () => {
     const firstText = useRef(null);
     const secondText = useRef(null);
     const thirdText = useRef(null);
+    const interval = useRef(null);
     const animTime = 3000;
 
     const changeColor = (el) => {
@@ -27,7 +28,11 @@ const Text = () => {
     useEffect(() => {
         animate();
 
-        setInterval(animate, animTime * 3);
+        interval.current = setInterval(animate, animTime * 3);
+
+        return () => {
+            clearInterval(interval.current);
+        };
     }, []);
 
     return (

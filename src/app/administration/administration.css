@@ -1,0 +1,30 @@
+.info-container {
+    padding-top: 10rem;
+}
+
+.info-container > h1 {
+    text-align: center;
+}
+
+.img-container:first-child {
+    margin-top: 0;
+}
+
+.img-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 4rem 0;
+}
+
+.img-container > img {
+    object-fit: cover;
+}
+
+.img-container > h2,
+.img-container > h3 {
+    font-weight: 100;
+    text-align: center;
+}

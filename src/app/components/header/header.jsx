@@ -24,22 +24,27 @@ const Header = () => {
                     alt="logo"
                 />
                 <div className="header-links">
-                    <Link href={"/school/#main"}>Головна</Link>
-                    <Link href={"/school/#gallery"}>Галерея</Link>
-                    <Link href={"/school/#contact"}>Контакти</Link>
+                    <Link href={"/#main"}>Головна</Link>
+                    <Link href={"/#gallery"}>Галерея</Link>
+                    <Link href={"/#contact"}>Контакти</Link>
                     <BasicMenu
                         label={"Інформація про заклад"}
                         options={infoOptions}
+                        setIsActive={setIsActive}
                     />
-                    <Link
-                        href={
-                            "/school/info/internal-system-of-education-quality-insurance"
-                        }
-                    >
+                    <Link href={"/education-quality"}>
                         Внутрішня система забезпечення якості освіти
                     </Link>
-                    <BasicMenu label={"Батькам"} options={parentsOptions} />
-                    <BasicMenu label={"Учням"} options={studentOptions} />
+                    <BasicMenu
+                        label={"Батькам"}
+                        options={parentsOptions}
+                        setIsActive={setIsActive}
+                    />
+                    <BasicMenu
+                        label={"Учням"}
+                        options={studentOptions}
+                        setIsActive={setIsActive}
+                    />
                 </div>
                 <RxHamburgerMenu
                     className="burger"

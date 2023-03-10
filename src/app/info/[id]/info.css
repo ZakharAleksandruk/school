@@ -1,0 +1,31 @@
+.info-container {
+    min-height: 100vh;
+    padding-top: 2rem;
+    color: var(--white-primary);
+    background-color: var(--black-primary);
+}
+
+.info-container > h1 {
+    padding-bottom: 2rem;
+    font-size: 3rem;
+    font-family: KharkivTone;
+    letter-spacing: 0.3rem;
+    text-align: center;
+}
+
+.p-container > p {
+    padding: 1rem 0;
+    font-weight: 100;
+}
+
+@media (max-width: 1000px) {
+    .info-container > h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .info-container > h1 {
+        font-size: 1rem;
+    }
+}

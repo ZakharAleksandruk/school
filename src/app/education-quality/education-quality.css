@@ -1,0 +1,25 @@
+.quality-container {
+    padding-top: 10rem;
+    color: var(--white-primary);
+    background-color: var(--black-primary);
+    font-weight: 100;
+}
+
+.quality-container > h1 {
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+.quality-link {
+    font-size: 1.4rem;
+    padding: 2rem 0;
+    color: var(--white-primary);
+}
+
+.quality-link:visited {
+    color: var(--white-primary);
+}
+
+.quality-p {
+    padding: 1rem 0;
+}
