@@ -1,14 +1,12 @@
 "use client";
 
 import "./education-quality.css";
-import Header from "../components/header/header.jsx";
 import { Container } from "@mui/material";
 
 const EducationQuality = () => {
     return (
         <div className="quality-container">
             <h1>Внутрішня система забезпечення якості освіти</h1>
-            <Header />
             <Container>
                 <a
                     className="quality-link"

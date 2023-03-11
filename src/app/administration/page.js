@@ -1,11 +1,9 @@
 import "./administration.css";
-import Header from "../components/header/header.jsx";
 import Image from "next/image";
 
 const Administration = () => {
     return (
         <>
-            <Header />
             <div className="info-container">
                 <h1>Адміністрація</h1>
                 <>

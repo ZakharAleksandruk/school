@@ -4,6 +4,7 @@ import { useRef, useEffect } from "react";
 const Button = () => {
     const animTime = 3000;
     const btn = useRef(null);
+    const interval = useRef(null);
 
     const animate = () => {
         btn.current.classList?.remove("btn-pink-gradient");
@@ -23,7 +24,11 @@ const Button = () => {
     useEffect(() => {
         animate();
 
-        setInterval(animate, animTime * 3);
+        interval.current = setInterval(animate, animTime * 3);
+
+        return () => {
+            clearInterval(interval.current);
+        };
     }, []);
 
     return (

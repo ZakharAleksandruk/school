@@ -4,13 +4,13 @@ import { uid } from "uid";
 
 const Navigation = () => {
     const cardOptions = [
-        { title: "Історія", href: "/school/info/history" },
+        { title: "Історія", href: "/info/history" },
         {
             title: "Загальні відомості про заклад",
-            href: "/school/info/general-info",
+            href: "/info/general-info",
         },
-        { title: "Розклад та дз", href: "/school/schedule-and-hw" },
-        { title: "Новини", href: "/school/news" },
+        { title: "Розклад та дз", href: "/schedule-and-hw" },
+        { title: "Новини", href: "/news" },
     ];
 
     return (
