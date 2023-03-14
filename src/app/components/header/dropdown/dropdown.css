@@ -1,4 +1,4 @@
 .dropdown-link {
     color: var(--black-primary);
-    font-weight: 400;
+    text-decoration: none;
 }

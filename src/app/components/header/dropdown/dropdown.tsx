@@ -5,6 +5,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { uid } from "uid";
 import Link from "next/link";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 export default function BasicMenu({ label, options, setIsActive }) {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -29,6 +30,7 @@ export default function BasicMenu({ label, options, setIsActive }) {
                     overflow: "hidden",
                     textTransform: "none",
                     fontSize: "1rem",
+                    fontWeight: "400",
                     position: "relative",
                     marginBottom: "0.1rem",
                     color: "#000",
@@ -61,6 +63,7 @@ export default function BasicMenu({ label, options, setIsActive }) {
                     );
                 })}
             </Menu>
+            <MdKeyboardArrowDown />
         </div>
     );
 }

@@ -10,13 +10,13 @@ const Drawer = ({ setIsActive }) => {
     return (
         <div className="drawer">
             <RxCross1 className="cross" onClick={() => setIsActive(false)} />
-            <Link href={"/school/#main"} onClick={() => setIsActive(false)}>
+            <Link href={"/#main"} onClick={() => setIsActive(false)}>
                 Головна
             </Link>
-            <Link href={"/school/#gallery"} onClick={() => setIsActive(false)}>
+            <Link href={"/#gallery"} onClick={() => setIsActive(false)}>
                 Галерея
             </Link>
-            <Link href={"/school/#contact"} onClick={() => setIsActive(false)}>
+            <Link href={"/#contact"} onClick={() => setIsActive(false)}>
                 Контакти
             </Link>
             <BasicMenu
