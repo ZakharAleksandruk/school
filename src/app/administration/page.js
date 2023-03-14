@@ -4,7 +4,7 @@ import Image from "next/image";
 const Administration = () => {
     return (
         <>
-            <div className="info-container">
+            <div className="admin-container">
                 <h1>Адміністрація</h1>
                 <>
                     <div className="img-container">

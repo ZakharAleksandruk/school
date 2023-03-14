@@ -1,8 +1,10 @@
-.info-container {
+.admin-container {
     padding-top: 10rem;
+    color: var(--white-primary);
+    background-color: var(--black-primary);
 }
 
-.info-container > h1 {
+.admin-container > h1 {
     text-align: center;
 }
 
@@ -21,6 +23,15 @@
 
 .img-container > img {
     object-fit: cover;
+    width: 400px;
+    height: 400px;
+}
+
+@media (max-width: 500px) {
+    .img-container > img {
+        width: 300px;
+        height: 300px;
+    }
 }
 
 .img-container > h2,
